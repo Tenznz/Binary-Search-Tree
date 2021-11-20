@@ -30,4 +30,39 @@ public class MyBinaryTree<K extends Comparable<K>> {
 	
 		return root == null ?0 : 1+this.getSizeRecursive(root.left)+this.getSizeRecursive(root.right);
 	}
+	public void inOrder() {
+		inOrderRec(this.root);
+	}
+	private void inOrderRec(MyBinaryNode<K> root) {
+		
+		if(root != null) {
+			inOrderRec(root.left);
+			System.out.println(root.key);
+			inOrderRec(root.right);
+		}
+	}
+	
+//	public void preOrder() {
+//		preOrderRec(this.root);
+//	}
+//	private void preOrderRec(MyBinaryNode<K> root) {
+//		
+//		if(root != null) {
+//			System.out.println(root.key);
+//			preOrderRec(root.left);
+//			preOrderRec(root.right);
+//		}
+//	}
+//	
+//	public void postOrder() {
+//		postOrderRec(this.root);
+//	}
+//	private void postOrderRec(MyBinaryNode<K> root) {
+//		
+//		if(root != null) {
+//			postOrderRec(root.left);
+//			postOrderRec(root.right);
+//			System.out.println(root.key);
+//		}
+//	}
 }
